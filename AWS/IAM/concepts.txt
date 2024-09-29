@@ -1,0 +1,37 @@
+Defination:
+IAM is the identity access management is a free web service that helps you control access to aws resources and services.
+
+Components:
+1.Users: 
+Users are individual accounts created for people or service that need access to aws resources
+
+2.groups:
+IAM groups are collection of iam users groups help manage permissions for multiple users bu assigning a policy to the group and each user in the group inherits those permissions
+
+3.Roles:
+IAM roles are used to grant permssions to entities that are not iam users (such as applications, services , or users from other aws account)
+
+4.Policies:
+IAM Policies define the permissions for users, groups, or roles policies can be managed(created by aws or you) or inline(embedded directly in an entity)
+
+Benefits of IAM:
+1.Centralized Access Control: IAM lets you manage access to AWS services and resources from one place.
+2.Granular Permissions: You can define fine-grained access to AWS resources.
+3.Security: By using IAM, you avoid using root credentials and can follow best security practices like multi-factor authentication (MFA) and temporary security credentials.
+
+
+AWS Organizations:
+AWS Organizations is a service that allows you to centrally manage and govern multiple AWS accounts within your organization. It provides a hierarchical structure to group AWS accounts, manage policies, and enforce security and compliance rules across all accounts. AWS Organizations is especially useful for large enterprises or teams that have multiple AWS accounts for different departments, projects, or business units.
+
+features:
+Organizational units
+Centralized management
+consolated billing
+cross-account role account
+Account Management
+
+SCP(Service control policies)
+
+AWS Control Tower:
+
+AWS Control Tower is a service that simplifies the setup and governance of a secure, multi-account AWS environment based on best practices. It automates the creation of a secure and compliant landing zone, which is a well-architected, multi-account environment that follows AWS-recommended best practices for security and compliance

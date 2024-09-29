@@ -1,0 +1,6 @@
+1.Choose region in root account
+2.top right your account click
+3.Activate IAM Role
+4.Billing Dashboard
+5.Billing preferences
+6.Budgets setup amount bridge
