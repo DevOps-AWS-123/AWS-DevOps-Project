@@ -1,0 +1,47 @@
+####Pods:
+1.pod is a logical host for one or more containers. it serves as a wrapper around the containers to provide a shared context for the containers to run in.
+
+2.containers:
+pods contains one or multiple containers that share the same network namespace, meaning they can communicate with each other using localhost and can share storage volumes
+
+3.Networking:
+each pod has its own ipaddress and all containers within  a pod can communicate with each other through this ip address. pods can also communicate with other pods in the cluster
+
+4.lifecycle:
+pods have a defined lifecycle managed by kubernates they can be created deleted and scaled based on application need. when a pod is terminated its containers are also terminated.
+
+5.Use Cases: Pods are typically used to run applications that are tightly coupled, meaning the containers within the pod need to work together closely. For example, a web server container might be paired with a logging container.
+
+6.ReplicaSets and Deployments: Pods are often managed by higher-level Kubernetes objects like ReplicaSets and Deployments, which help in scaling and managing the desired state of the application.
+
+7.Configuration: Pods can be configured using YAML files that define the desired state of the pod, including the containers to run, their configurations, environment variables, volumes, and other settings.
+
+##NPC
+Node inside Pod inside containers
+
+#each pod has unique ip address
+multiple containers can run inside a single pod, and they can communicate with each other using port
+
+Example:
+Webserver running in Node(ip address)
+inside node pod is havaing two container communicate using ports
+
+
+
+####deployments:
+*A Deployment is a higher-level abstraction that manages ReplicaSets and provides additional capabilities such as rolling updates, rollbacks, and scaling. Essentially, when you create a Deployment, Kubernetes automatically creates a ReplicaSet to manage your pods.
+
+Key Concepts of Deployment:
+*Rolling Updates: Deployment enables rolling updates where pods are gradually replaced with newer versions without downtime.
+*Rollback: If something goes wrong during an update, you can roll back to a previous version.
+*Scaling: You can easily scale the number of pods up or down.
+*Declarative Updates: You declare the desired state of your application (e.g., the container image version, the number of replicas), and Kubernetes adjusts the current state to match.
+
+
+####replicasets:
+A ReplicaSet ensures that a specified number of pod replicas are running at any given time. It maintains the desired state of the application by creating or deleting pods as necessary.
+
+Key Concepts of ReplicaSet:
+*Maintaining Pod Count: The ReplicaSet ensures that the exact number of pod replicas defined in its configuration is always running. If a pod dies, it will automatically create a new one.
+*Selector: ReplicaSets use selectors to identify which pods to manage based on labels. It will only control pods that match the selector.
+*Self-Healing: If a pod fails or gets deleted, the ReplicaSet ensures that new ones are started to replace them.
